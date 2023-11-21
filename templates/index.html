@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Finite State Automaton</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Finite State Automaton</h1>
+        </header>
+        <ul>
+            <h2>Nama Kelompok</h2>
+            <li>Mochamad Arie Arrianto<br>- 217064516001<br><br></li>
+            <li>Acandra<br>- 217064516010<br><br></li>
+            <li>Djulrais S Wally<br>- 217064516011</li>
+        </ul>
+        <div class="dgr">
+            <img src="static/Diagram.jpeg" alt="">
+        </div>
+        <main>
+            <form method="POST" action="/">
+                <div class="form-group">
+                    <label for="input_string">Masukkan Bilangan:</label>
+                    <input type="text" id="input_string" name="input_string" required>
+                </div>
+                <div class="form-group">
+                    <label for="input_type">Input Type:</label>
+                    <select id="input_type" name="input_type">
+                        <option value="binary">Binary</option>
+                        <option value="decimal">Decimal</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+
+            <div class="result">
+                {% if result %}
+                <h2>Result: {{ result }}</h2>
+                {% endif %} {% if image %}
+                <figure>
+                    <img src="{{ url_for('static', filename=image[0]) }}" alt="State Image">
+                    <figcaption>{{ image[1] }}</figcaption>
+                </figure>
+                {% endif %}
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Finite State Automaton</p>
+        </footer>
+    </div>
+
+</body>
+
+</html>
